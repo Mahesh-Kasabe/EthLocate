@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+
+{% block body %}
+
+<br>
+
+<table class="table table-dark">
+  <tbody>
+    <tr>
+    	<td> From : </td>
+      <td><a href="/address/{{ tx.from }}"> {{ tx.from }} </a> </td>
+
+    <tr>
+      <td> To :</td>
+      <td><a href="/address/{{ tx.to }}"> {{ tx.to }} </a> </td>
+    </tr>
+
+      <tr>
+      <td> Gas Fees :
+      	<td>{{ tx.gas }}</td>
+    </tr>
+    </tr>
+
+    <tr>
+            <td>value</td>
+            <td>{{ value }} Ether</td>
+        </tr>
+        <tr>
+            <td>gas used</td>
+            <td>{{ receipt.gasUsed }}</td>
+        </tr>
+        <tr>
+            <td>Gas price</td>
+            <td>{{ tx.gasPrice / 1000000000 }} Gwei</td>
+        </tr>
+
+  </tbody>
+</table>
+
+{% endblock %}
